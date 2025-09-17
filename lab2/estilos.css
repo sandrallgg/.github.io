@@ -1,0 +1,93 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  
+  padding-bottom: 100px; /* Espacio para que el contenido no quede debajo del footer fijo */
+  position: relative; /* Necesario para posicionar el footer si no está al final */
+  min-height: 100vh; /* Para que el body ocupe al menos la altura de la pantalla */
+  background-color: #d6e8ea;
+ 
+}
+main {
+    place-items: center;
+    padding-top: 60px;
+}
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+nav {
+ 
+    top: 0;          /* Lo coloca en la parte superior */
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    /*position: relative;*/
+    position: fixed;
+    width: 100%;
+} 
+footer {
+    background-color: #314ce7;
+    padding: 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+h1 {
+    
+    text-align: center;
+}
+h2, p {
+  text-align: center
+}
+
+ul {
+  list-style-type: none; 
+  overflow: hidden;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
+.seccion-contacto {
+  position: fixed; /* Fija el elemento en la ventana del navegador */
+  bottom: 0; /* Lo alinea a la parte inferior */
+  left: 0; /* Lo alinea a la izquierda */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  background-color: #f1f1f1; /* Un color de fondo para que se distinga */
+  padding: 10px 0; /* Espacio interno arriba y abajo */
+  text-align: center; /* Centra el texto dentro del footer */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Una sombra para darle profundidad */
+}
+
+.seccion-contacto address {
+  font-style: normal; /* Para quitar la itálica por defecto de <address> */
+}
+
+.seccion-contacto a {
+  color: #333;
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+
+.seccion-contacto a:hover {
+  text-decoration: underline; /* Añade subrayado al pasar el ratón */
+}
+/* Estilo para el contenido principal si quieres que el footer no se solape */
+/* Esto es opcional y depende de cómo quieras manejar el contenido */
