@@ -19,9 +19,9 @@ header {
     background-color: #f2f2f2;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
-nav {
- 
+nav { 
     top: 0;          /* Lo coloca en la parte superior */
     margin-top: 10px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -29,6 +29,49 @@ nav {
     position: fixed;
     width: 100%;
 } 
+form {
+  display: flex; /* Habilita Flexbox */
+  flex-direction: column; /* Apila los elementos uno debajo del otro */
+  align-items: flex-start; /* Alinea los elementos a la izquierda en el eje secundario */
+  width: 50%; /* Ancho completo del contenedor padre */
+}
+fieldset {
+  border: 1px solid #ccc; /* Borde del fieldset */
+  padding: 10px; /* Espacio interno */
+  margin-bottom: 15px; /* Espacio inferior entre fieldsets */
+  width: 80%; /* Ancho completo del contenedor padre */
+}
+
+/* Alineación de los botones de radio en una sola línea */
+        .radio-group {
+            display: flex;
+            gap: 20px; /* Espacio entre las opciones */
+            align-items: center; /* Alineación vertical */
+        }        
+        fieldset div label {
+            display: inline-block;
+        }
+/* Alineación de los botones de radio en una sola línea */
+        .checkbox-group {
+            display: flex;
+            gap: 20px; /* Espacio entre las opciones */
+            align-items: center; /* Alineación vertical */
+        }  
+/* Estilo general para inputs y textareas */
+    input:not([type="submit"]), textarea {
+      width: 80%;          /* Ocupa el 80% del contenedor */
+    }          
+    form label {
+      display: block; 
+    }     
+table {
+  border-collapse: collapse; /* Fusiona los bordes de las celdas */
+  width: 80%; /* Ancho de la tabla */
+}
+th, td {
+  border: 1px solid #000; /* Borde de 1px de grosor, sólido y negro */
+  text-align: left; /* Alineación del texto */
+}
 footer {
     background-color: #314ce7;
     padding: 10px;
@@ -37,23 +80,22 @@ footer {
     bottom: 0;
     width: 100%;
 }
-h1 {
-    
+h1 {    
     text-align: center;
 }
 h2, p {
-  text-align: center
+  text-align: center;
 }
-
+img {
+  display: block;
+  margin: 0 auto;}
 ul {
   list-style-type: none; 
   overflow: hidden;
 }
-
 ul li {
   float: left;
 }
-
 ul li a {
   display: block;
   color: white;
