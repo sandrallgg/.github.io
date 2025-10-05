@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">  
+    <head> 
+        <title>Contacto</title> 
+        <link rel="stylesheet" type="text/css" href="estilos.css" media="screen">
+        <meta charset="UTF-8">
+    </head>  
+    
+    <body> 
+        <header>
+            <nav> 
+                <ul> 
+                    <li><a href="index.html">Volver a la página principal</a></li>
+                                 
+                </ul>
+                
+            </nav>    
+        </header>
+        
+        <main>
+            
+            <form action="/submit-form" method="post">  
+                <h1>Contacto</h1>
+                <p>Si deseas contactarme, por favor completa el siguiente formulario:</p>
+                
+                <label for="nombre">Nombre:(requerido)</label>
+                <input type="text" id="nombre" name="nombre" maxlength="20" required>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" maxlength="20" >
+                <label for="email">Correo Electrónico:(requerido)</label>
+                <input type="email" id="email" name="email" required>
+                <label for="telefono">Telefono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="ingrese su telefono" >
+                <label for="edad">Edad:</label> 
+                <input type="number" id="edad" name="edad" min="16" max="120">
+                <label for="direccion">Dirección:</label>
+                <textarea id="direccion" name="direccion" rows="4"></textarea>
+
+                <datalist id="lista-sugerencias">
+                    <option value="Río Negro"></option>
+                    <option value="Chubut"></option>
+                    <option value="Neuquén"></option>
+                </datalist>
+                <label for="provincia">Provincia:</label>
+                <input type="text" id="provincia" name="provincia" list="lista-sugerencias">
+                <label for="codigopostal">Codigo Postal:
+                    <input type="text" id="codigopostal" name="codigopostal" pattern="[A-Za-z][0-9]{4}[A-Za-z]{3}" placeholder="A1234ABC"
+                    title="El formato debe ser: 1 letra, 4 números y 3 letras (ej: A1234ABC)">
+                </label>              
+                <fieldset>
+                    <legend>Método preferido de contacto:</legend>
+                    <div class radio-group>
+                        <label for="correo-electronico">
+                            <input type="radio" id="correo-electronico" name="contacto" value="Correo electrónico" checked=””>
+                            <p>Correo electrónico </p>
+                        </label>
+                        <label for="correo-postal">
+                            <input type="radio" id="correo-postal" name="contacto" value="Correo postal">
+                            <p>Correo postal</p>
+                        </label>
+                        <label for="telefono">
+                            <input type="radio" id="telefono" name="contacto" value="Teléfono">
+                            <p>Teléfono</p>
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Elige tus preferencias de suscripción:</legend>
+                    <div class checkbox-group>                       
+                        <label for="noticias">                            
+                            <input type="checkbox" id="noticias" name="tipo_suscripcion" value="noticias">
+                            <p>Noticias</p></label>
+                        <label for="promociones">
+                            <input type="checkbox" id="promociones" name="tipo_suscripcion" value="promociones">
+                            <p>Promociones</p></label>
+                        <label for="alertas">
+                            <input type="checkbox" id="alertas" name="tipo_suscripcion" value="alertas" checked>
+                            <p>Alertas</p></label>
+                        <label for="eventos">
+                            <input type="checkbox" id="eventos" name="tipo_suscripcion" value="eventos">
+                            <p>Eventos</p></label>
+                    </div>
+                </fieldset>
+
+                <input type="submit" value="Cargar">
+                <table>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Valor</th>
+                    </tr>
+                    <tr>
+                        <td>Nombre</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Apellido</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Correo Electrónico</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Teléfono</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Edad</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Dirección</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Provincia</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Código Postal</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Método de contacto preferido</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tipo de suscripción</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+
+
+
+
+
+        </main>     
+            
+        <footer class="seccion-contacto">
+            <p> &copy 2025 Sandra Leonor Garcia </p>
+            <address>                
+                <p>Dirección nodo: Irigoyen y Belgrano - Rio Colorado(8138), Río Negro, Argentina</p>                
+            </address>
+        </footer>
+    </body> <!-- cierra la sección body --> 
+</html> <!-- cierra el documento HTML -->
