@@ -51,16 +51,16 @@
                     <legend>Método preferido de contacto:</legend>
                     <div class radio-group>
                         <label for="correo-electronico">
-                            <input type="radio" id="correo-electronico" name="contacto" value="Correo electrónico" checked=””>
-                            <p>Correo electrónico </p>
+                            <input type="radio" id="met_correo-electronico" name="contacto" value="Correo electrónico" checked=””>
+                            Correo electrónico
                         </label>
                         <label for="correo-postal">
-                            <input type="radio" id="correo-postal" name="contacto" value="Correo postal">
-                            <p>Correo postal</p>
+                            <input type="radio" id="met_correo-postal" name="contacto" value="Correo postal">
+                            Correo postal
                         </label>
                         <label for="telefono">
-                            <input type="radio" id="telefono" name="contacto" value="Teléfono">
-                            <p>Teléfono</p>
+                            <input type="radio" id="met_telefono" name="contacto" value="Teléfono">
+                            Teléfono
                         </label>
                     </div>
                 </fieldset>
@@ -69,72 +69,71 @@
                     <div class checkbox-group>                       
                         <label for="noticias">                            
                             <input type="checkbox" id="noticias" name="tipo_suscripcion" value="noticias">
-                            <p>Noticias</p></label>
+                            Noticias</label>
                         <label for="promociones">
                             <input type="checkbox" id="promociones" name="tipo_suscripcion" value="promociones">
-                            <p>Promociones</p></label>
+                            Promociones</label>
                         <label for="alertas">
                             <input type="checkbox" id="alertas" name="tipo_suscripcion" value="alertas" checked>
-                            <p>Alertas</p></label>
+                            Alertas</label>
                         <label for="eventos">
                             <input type="checkbox" id="eventos" name="tipo_suscripcion" value="eventos">
-                            <p>Eventos</p></label>
+                            Eventos</label>
                     </div>
                 </fieldset>
 
                 <input type="submit" value="Cargar">
                 <table>
-                    <tr>
-                        <th>Campo</th>
-                        <th>Valor</th>
-                    </tr>
-                    <tr>
-                        <td>Nombre</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Apellido</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Correo Electrónico</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Teléfono</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Edad</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Dirección</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Provincia</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Código Postal</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Método de contacto preferido</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Tipo de suscripción</td>
-                        <td></td>
-                    </tr>
+                    <thead> <!-- encabezado de la tabla -->
+                        <tr>
+                            <th>Campo</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody> <!-- cuerpo de la tabla -->              
+                        <tr>
+                            <td>Nombre</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Apellido</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Correo Electrónico</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Teléfono</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Edad</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Dirección</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Provincia</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Código Postal</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Método de contacto preferido</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Tipo de suscripción</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
                 </table>
             </form>
-
-
-
-
-
         </main>     
             
         <footer class="seccion-contacto">
