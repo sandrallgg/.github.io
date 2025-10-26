@@ -1,15 +1,22 @@
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-}
-body {
   
+}
+body { 
+  font-family: 'Roboto', sans-serif;
   padding-bottom: 100px; /* Espacio para que el contenido no quede debajo del footer fijo */
   position: relative; /* Necesario para posicionar el footer si no está al final */
   min-height: 100vh; /* Para que el body ocupe al menos la altura de la pantalla */
-  background-color: #d6e8ea;
- 
+  background-color: #cfe0e5;
+}
+/* El artículo deberá tener un alto máximo de 300px y barra de scroll cuando pase ese tamaño  */
+.articulo {
+  height: 300px;
+  overflow: auto; /* use auto en lugar de scroll, porque overflow: scroll fuerza la barra, aunque no se haya llegado al alto indicado */
+  padding-top: 10px;
 }
 main {
     place-items: center;
@@ -23,11 +30,12 @@ header {
 }
 nav { 
     top: 0;          /* Lo coloca en la parte superior */
-    margin-top: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 0;
+    background-color: rgba(0, 0, 0, 1);
     /*position: relative;*/
     position: fixed;
     width: 100%;
+    z-index: 100; /* para que se vea en 1er plano siempre*/
 } 
 form {
   display: flex; /* Habilita Flexbox */
@@ -35,11 +43,31 @@ form {
   align-items: flex-start; /* Alinea los elementos a la izquierda en el eje secundario */
   width: 50%; /* Ancho completo del contenedor padre */
 }
+/* Contenedor del título y la imagen */
+  .titulo-animado {
+      display: flex;      
+      justify-content: flex-start;
+  }
+/* Estilo para la imagen en la cabecera del título */
+  .titulo-image {
+      width: 60px;
+      height: auto;
+      transform-style: preserve-3d;
+      transition: transform 2s ease-in-out;
+  }
+  .titulo-image:hover{
+    transform: rotateY(360deg); /* giro de la imagen, cuando pasa el mouse encima */
+  }
+  form div h1 {
+    margin-right: 20px; /* separa la imagen del texto */
+  }
+
 fieldset {
   border: 1px solid #ccc; /* Borde del fieldset */
   padding: 10px; /* Espacio interno */
   margin-bottom: 15px; /* Espacio inferior entre fieldsets */
   width: 80%; /* Ancho completo del contenedor padre */
+  box-shadow: 0 2px 0 0 #a0a0a0, 0 0 0 0 #a0a0a0; /* Sombra para el relieve inferior */
 }
 
 /* Alineación de los botones de radio en una sola línea */
@@ -60,13 +88,33 @@ fieldset {
 /* Estilo general para inputs y textareas */
     input:not([type="submit"]), textarea {
       width: 80%;          /* Ocupa el 80% del contenedor */
+      padding: 0.5%;
+      border: none;      
+      box-shadow: 0 2px 0 0 #a0a0a0, 0 0 0 0 #a0a0a0; /* Sombra para el relieve inferior */
+      background-color: #cbd6e9;
+      font-family: "Playwrite DE SAS", cursive;
     }          
+    input[type="checkbox"], input[type="radio"]{
+      box-shadow: none; /* sin Sombra para el relieve inferior */
+    }
+    input[type="submit"] {
+      width: 50%;
+      align-self: center;
+      align-items: center;
+      padding: 0.5%;
+      background-color: #bad6e1;
+    }
+    input[type="submit"]:hover{
+    /** color del boton **/
+      background-color: #80b9ce;  
+    }
     form label {
       display: block; 
     }     
 table {
   border-collapse: collapse; /* Fusiona los bordes de las celdas */
   width: 80%; /* Ancho de la tabla */
+  margin-top: 20px;
 }
 th, td {
   border: 1px solid #000; /* Borde de 1px de grosor, sólido y negro */
@@ -75,7 +123,7 @@ th, td {
 footer {
     background-color: #314ce7;
     padding: 10px;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 4px rgba(149, 31, 31, 0.1);
     position: relative;
     bottom: 0;
     width: 100%;
@@ -88,7 +136,31 @@ h2, p {
 }
 img {
   display: block;
-  margin: 0 auto;}
+  margin: 0 auto;
+}
+
+
+/* Boton para volver arriba */
+.boton-arriba{  
+  position: relative;
+  align-self: flex-end; /* pone la img del contenedor a la derecha */  
+  width: 80%;
+  height: 50px;
+}
+.boton-arriba img{
+  position: absolute;
+    bottom: 0px;
+    right: 10px;
+  width: 50px;
+  height: 50px;   
+}
+div.sticky {
+  position: sticky;
+  top: 52px; 
+  padding: 5px;
+  background-color: #c4d5d5;
+  border: 2px solid #79b9c5;
+}
 ul {
   list-style-type: none; 
   overflow: hidden;
@@ -105,7 +177,7 @@ ul li a {
 }
 
 ul li a:hover {
-  background-color: #111111;
+  background-color: #077aa4; /** color cuando se le pasa el mouse por encima **/
 }
 
 .seccion-contacto {

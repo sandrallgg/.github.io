@@ -4,6 +4,16 @@
         <title>Contacto</title> 
         <link rel="stylesheet" type="text/css" href="estilos.css" media="screen">
         <meta charset="UTF-8">
+        <!-- fuente roboto desde google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <!-- fuente Playwrite DE SAS desde google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+SAS:wght@100..400&display=swap" rel="stylesheet">
+
+
     </head>  
     
     <body> 
@@ -19,22 +29,26 @@
         
         <main>
             
-            <form action="/submit-form" method="post">  
-                <h1>Contacto</h1>
-                <p>Si deseas contactarme, por favor completa el siguiente formulario:</p>
-                
+            <form action="/submit-form" method="post"> 
+                <!-- Contenedor del título y la imagen al lado derecho-->
+                    <div class="titulo-animado">
+                        <h1>Formulario de Contacto</h1>
+                        <img src="https://admin.curza.uncoma.edu.ar/extension/wp-content/uploads/sites/10/2020/06/CURZA-logo.png" alt="UNCO - CURZA" class="titulo-image" />
+                    </div>
+                <!-- Carga de datos del formulario--> 
+                <p>Si deseas contactarme, por favor completa el siguiente formulario:</p>                
                 <label for="nombre">Nombre:(requerido)</label>
-                <input type="text" id="nombre" name="nombre" maxlength="20" required>
+                <input type="text" id="nombre" name="nombre" maxlength="20" placeholder="Ingrese su nombre" required>
                 <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" maxlength="20" >
+                <input type="text" id="apellido" name="apellido" maxlength="20" placeholder="Ingrese su apellido" >
                 <label for="email">Correo Electrónico:(requerido)</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Ingrese su e-mail" required>
                 <label for="telefono">Telefono:</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="ingrese su telefono" >
+                <input type="tel" id="telefono" name="telefono" placeholder="ingrese su telefono" placeholder="Ingrese su teléfono">
                 <label for="edad">Edad:</label> 
-                <input type="number" id="edad" name="edad" min="16" max="120">
+                <input type="number" id="edad" name="edad" min="16" max="120" placeholder="Ingrese su edad">
                 <label for="direccion">Dirección:</label>
-                <textarea id="direccion" name="direccion" rows="4"></textarea>
+                <textarea id="direccion" name="direccion" rows="4"> </textarea>
 
                 <datalist id="lista-sugerencias">
                     <option value="Río Negro"></option>
@@ -82,7 +96,7 @@
                     </div>
                 </fieldset>
 
-                <input type="submit" value="Cargar">
+                <input type="submit" value="Cargar los datos">
                 <table>
                     <thead> <!-- encabezado de la tabla -->
                         <tr>
@@ -134,6 +148,13 @@
                     </tbody>
                 </table>
             </form>
+            <div class="boton-arriba">
+            <figure> 
+                <a href="#top">
+                    <img src="img/arriba.png" alt="Ir al inicio" >  
+                </a> 
+            </figure>
+        </div>
         </main>     
             
         <footer class="seccion-contacto">
