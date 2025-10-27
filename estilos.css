@@ -48,7 +48,7 @@ form {
       display: flex;      
       justify-content: flex-start;
   }
-/* Estilo para la imagen en la cabecera del título */
+/* Estilo para la imagen en la cabecera del título, que va a girar cundo le pase el mouse por encima (en la pagina Index) */
   .titulo-image {
       width: 60px;
       height: auto;
@@ -61,6 +61,16 @@ form {
   form div h1 {
     margin-right: 20px; /* separa la imagen del texto */
   }
+/* en la pagina contacto, la imagrn gira cuando la pagina carga */
+imagen-gira {            
+    max-width: 10%;
+    height: auto;
+    animation: horizontal-spin 4s linear;
+}
+@keyframes horizontal-spin {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
 
 fieldset {
   border: 1px solid #ccc; /* Borde del fieldset */
@@ -205,3 +215,4 @@ ul li a:hover {
 }
 /* Estilo para el contenido principal si quieres que el footer no se solape */
 /* Esto es opcional y depende de cómo quieras manejar el contenido */
+
