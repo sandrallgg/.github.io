@@ -62,27 +62,6 @@ form {
   form div h1 {
     margin-right: 20px; /* separa la imagen del texto */
   }
-
-
-
-
-.img-gira {       max-width: 10%;
-            height: auto;
-            animation: horizontal-spin 4s linear;
-        }
-        @keyframes horizontal-spin {
-            0% { transform: rotateY(0deg); }
-            100% { transform: rotateY(360deg); }
-        }
-
-
-
-
-
-
-
-
-
 fieldset {
   border: 1px solid #ccc; /* Borde del fieldset */
   padding: 10px; /* Espacio interno */
@@ -226,3 +205,4 @@ ul li a:hover {
 }
 /* Estilo para el contenido principal si quieres que el footer no se solape */
 /* Esto es opcional y depende de cómo quieras manejar el contenido */
+
