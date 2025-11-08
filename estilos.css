@@ -58,6 +58,9 @@ form {
   .titulo-image:hover{
     transform: rotateY(360deg); /* giro de la imagen, cuando pasa el mouse encima */
   }
+  #contenidoOculto {
+  display: none;
+}
 
   form div h1 {
     margin-right: 20px; /* separa la imagen del texto */
