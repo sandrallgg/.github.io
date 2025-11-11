@@ -32,6 +32,16 @@ const celdaTipoSuscripcion = document.getElementById('celdaTipoSuscripcion');
 const checkboxes = document.querySelectorAll('input[name="tipo_suscripcion"]');
 
 //listener de eventos, se actualizar al perder el foco, podria usar input y se iria actualizando mientras escribe
+// para chequear la validez de los campos y mostrar mensajes de error nativos del navegador
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('blur', () => {
+if (!input.checkValidity()) {
+input.reportValidity(); // Muestra el mensaje de validación del navegador
+}
+  });
+});
+
+// Añadir "escuchadores de eventos" para cada campo del formulario
 inputnombre.addEventListener('blur', function() {
   celdanombre.textContent = inputnombre.value;  
 });
