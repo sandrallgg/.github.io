@@ -8,20 +8,16 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <!-- fuente Playwrite DE SAS desde google fonts-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+SAS:wght@100..400&display=swap" rel="stylesheet">
-
-
     </head>  
     
     <body> 
         <header>
             <nav> 
                 <ul> 
-                    <li><a href="index.html">Volver a la página principal</a></li>
-                                 
+                    <li><a href="index.html">Index</a></li>
+                    <li><a href="acercade.html">Acerca de </a></li>
+                    <li><a href="contacto.html">Contacto </a></li>  
+                    <li><a href="juego.html">Juego </a></li>                                  
                 </ul>
                 
             </nav>    
@@ -29,75 +25,109 @@
         
         <main>
             
-            <form action="/submit-form" method="post"> 
-                <!-- Contenedor del título y la imagen al lado derecho-->
-                    <div class="titulo-animado">
-                        <h1>Formulario de Contacto</h1>
-                        <img src="https://admin.curza.uncoma.edu.ar/extension/wp-content/uploads/sites/10/2020/06/CURZA-logo.png" alt="UNCO - CURZA" class="titulo-image" >
-                    </div>
-                <!-- Carga de datos del formulario--> 
-                <p>Si deseas contactarme, por favor completa el siguiente formulario:</p>                
-                <label for="nombre">Nombre:(requerido)</label>
-                <input type="text" id="nombre" name="nombre" maxlength="20" placeholder="Ingrese su nombre" required>
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" maxlength="20" placeholder="Ingrese su apellido" >
-                <label for="email">Correo Electrónico:(requerido)</label>
-                <input type="email" id="email" name="email" placeholder="Ingrese su e-mail" required>
-                <label for="telefono">Telefono:</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="ingrese su telefono" placeholder="Ingrese su teléfono">
-                <label for="edad">Edad:</label> 
-                <input type="number" id="edad" name="edad" min="16" max="120" placeholder="Ingrese su edad">
-                <label for="direccion">Dirección:</label>
-                <textarea id="direccion" name="direccion" rows="4"> </textarea>
-
-                <datalist id="lista-sugerencias">
-                    <option value="Río Negro"></option>
-                    <option value="Chubut"></option>
-                    <option value="Neuquén"></option>
-                </datalist>
-                <label for="provincia">Provincia:</label>
-                <input type="text" id="provincia" name="provincia" list="lista-sugerencias">
-                <label for="codigopostal">Codigo Postal:
-                    <input type="text" id="codigopostal" name="codigopostal" pattern="[A-Za-z][0-9]{4}[A-Za-z]{3}" placeholder="A1234ABC"
-                    title="El formato debe ser: 1 letra, 4 números y 3 letras (ej: A1234ABC)">
-                </label>              
-                <fieldset>
-                    <legend>Método preferido de contacto:</legend>
-                    <div class radio-group>
-                        <label for="correo-electronico">
-                            <input type="radio" id="met_correo-electronico" name="contacto" value="Correo electrónico" checked=””>
-                            Correo electrónico
-                        </label>
-                        <label for="correo-postal">
-                            <input type="radio" id="met_correo-postal" name="contacto" value="Correo postal">
-                            Correo postal
-                        </label>
-                        <label for="telefono">
-                            <input type="radio" id="met_telefono" name="contacto" value="Teléfono">
-                            Teléfono
-                        </label>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Elige tus preferencias de suscripción:</legend>
-                    <div class checkbox-group>                       
-                        <label for="noticias">                            
-                            <input type="checkbox" id="noticias" name="tipo_suscripcion" value="noticias">
-                            Noticias</label>
-                        <label for="promociones">
-                            <input type="checkbox" id="promociones" name="tipo_suscripcion" value="promociones">
-                            Promociones</label>
-                        <label for="alertas">
-                            <input type="checkbox" id="alertas" name="tipo_suscripcion" value="alertas" checked>
-                            Alertas</label>
-                        <label for="eventos">
-                            <input type="checkbox" id="eventos" name="tipo_suscripcion" value="eventos">
-                            Eventos</label>
-                    </div>
-                </fieldset>
-
-                <input type="submit" value="Cargar los datos">
-                <table>
+            
+                <div class="titulo">
+                    <!-- Contenedor del título y la imagen al lado derecho-->
+                        <div class="titulo-animado">
+                            <h1>Formulario de Contacto</h1>                    
+                            <img src="https://admin.curza.uncoma.edu.ar/extension/wp-content/uploads/sites/10/2020/06/CURZA-logo.png" alt="UNCO - CURZA" class="titulo-image" >
+                
+                        </div>
+                    <!-- Carga de datos del formulario--> 
+                    <p>Si deseas contactarme, por favor completa el siguiente formulario:</p>    
+                </div>
+            <form action="/submit-form" method="post" class="formulario" id="formulario">                     
+                <div class="formulario-grupo" id="form-nombre">
+                    <label for="nombre" class="formulario-label">Nombre:(requerido)</label>
+                    <input type="text" id="nombre" name="nombre" maxlength="20" placeholder="Ingrese su nombre" required>   
+                    <p class="form-mensaje-error"> El nombre debe tener un maximo de 20 caracteres, es un campo requerido</p>
+                </div>
+                <div class="formulario-grupo" id="form-apellido">
+                    <label for="apellido" class="formulario-label">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" maxlength="20" placeholder="Ingrese su apellido" >
+                    <p class="form-mensaje-error"> El apellido debe tener un maximo de 20 caracteres </p>
+                </div>
+                <div class="formulario-grupo" id="form-email">
+                    <label for="email" class="formulario-label">Correo Electrónico:(requerido)</label>
+                    <input type="email" id="email" name="email" placeholder="Ingrese su e-mail" required>
+                    <p class="form-mensaje-error"> Ingrese un e-mail válido </p>
+                </div>
+                <div class="formulario-grupo" id="form-telefono">
+                    <label for="telefono" class="formulario-label">Telefono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="ingrese su telefono" placeholder="Ingrese su teléfono">
+                    <p class="form-mensaje-error"> Ingrese un teléfono válido </p>
+                </div>
+                <div class="formulario-grupo" id="form-edad">                
+                    <label for="edad" class="formulario-label">Edad:</label> 
+                    <input type="number" id="edad" name="edad" min="16" max="120" placeholder="Ingrese su edad">
+                    <p class="form-mensaje-error"> La edad debe estar entre 16 y 120 años </p>
+                </div>
+                <div class="formulario-grupo" id="form-direccion">
+                    <label for="direccion" class="formulario-label">Dirección:</label>
+                    <textarea id="direccion" name="direccion" rows="4"> </textarea> 
+                    <p class="form-mensaje-error">  </p> 
+                </div>
+                <div class="formulario-grupo" id="form-provincia">
+                    <datalist id="lista-sugerencias">
+                        <option value="Río Negro"></option>
+                        <option value="Chubut"></option>
+                        <option value="Neuquén"></option>
+                    </datalist>
+                    <label for="provincia" class="formulario-label">Provincia:</label>
+                    <input type="text" id="provincia" name="provincia" list="lista-sugerencias">
+                    <p class="form-mensaje-error">  </p>
+                </div>
+                <div class="formulario-grupo" id="form-codigopostal">
+                    <label for="codigopostal" class="formulario-label">Codigo Postal:
+                        <input type="text" id="codigopostal" name="codigopostal" pattern="[A-Za-z][0-9]{4}[A-Za-z]{3}" placeholder="A1234ABC"
+                        title="El formato debe ser: 1 letra, 4 números y 3 letras (ej: A1234ABC)">
+                    </label>
+                    <p class="form-mensaje-error"> El formato debe ser: 1 letra, 4 números y 3 letras (ej: A1234ABC) </p>
+                </div>
+                <div class="formulario-fieldset" id="form-metcontacto">
+                    <fieldset>
+                        <legend class="formulario-label">Método preferido de contacto:</legend>
+                        <div class radio-group>
+                            <label for="correo-electronico">
+                                <input type="radio" id="met_correo-electronico" name="contacto" value="Correo electrónico" checked=””>
+                                Correo electrónico
+                            </label>
+                            <label for="correo-postal">
+                                <input type="radio" id="met_correo-postal" name="contacto" value="Correo postal">
+                                Correo postal
+                            </label>
+                            <label for="telefono">
+                                <input type="radio" id="met_telefono" name="contacto" value="Teléfono">
+                                Teléfono
+                            </label>
+                        </div>
+                    </fieldset>    
+                </div>           
+                <div class="formulario-fieldset" id="form-tiposuscripcion">
+                    <fieldset>
+                        <legend class="formulario-label">Elige tus preferencias de suscripción:</legend>
+                        <div class checkbox-group>                       
+                            <label for="noticias">                            
+                                <input type="checkbox" id="noticias" name="tipo_suscripcion" value="noticias">
+                                Noticias</label>
+                            <label for="promociones">
+                                <input type="checkbox" id="promociones" name="tipo_suscripcion" value="promociones">
+                                Promociones</label>
+                            <label for="alertas">
+                                <input type="checkbox" id="alertas" name="tipo_suscripcion" value="alertas" checked>
+                                Alertas</label>
+                            <label for="eventos">
+                                <input type="checkbox" id="eventos" name="tipo_suscripcion" value="eventos">
+                                Eventos</label>
+                        </div>
+                    </fieldset>    
+                </div>               
+                <div class="boton">
+                    <input type="submit" value="Cargar los datos">
+                </div>
+                </form>
+                <div class="tabla-contenido">
+                <table  id="tablaDatos">
                     <thead> <!-- encabezado de la tabla -->
                         <tr>
                             <th>Campo</th>
@@ -147,7 +177,7 @@
                         </tr>
                     </tbody>
                 </table>
-            </form>
+            
             <div class="boton-arriba">
             <figure> 
                 <a href="#top">
