@@ -7,6 +7,8 @@
 }
 body { 
   font-family: 'Roboto', sans-serif;
+  font-size:medium;
+  color:#000;
   padding-bottom: 100px; /* Espacio para que el contenido no quede debajo del footer fijo */
   position: relative; /* Necesario para posicionar el footer si no está al final */
   min-height: 100vh; /* Para que el body ocupe al menos la altura de la pantalla */
@@ -121,11 +123,13 @@ fieldset {
 /* Estilo general para inputs y textareas */
     input:not([type="submit"]), textarea, fieldset {
       width: 80%;          /* Ocupa el 80% del contenedor */
-      padding: 5 40 5 10;
+      padding: 0 40 0 10;
+      margin: 0;
       border: none;      
       box-shadow: 0 2px 0 0 #a0a0a0, 0 0 0 0 #a0a0a0; /* Sombra para el relieve inferior */
       background-color: #cbd6e9;
       transition: 0.3 ease all;
+      font-size:larger;
     }          
     input:not([type="submit"],[type="radio"],[type="checkbox"]):hover, textarea:hover, fieldset:hover{
       box-shadow: 0 2px 0 0 #a6aff1, 0 0 0 0 #a6aff1; /* Sombra para el relieve inferior */
@@ -159,7 +163,12 @@ fieldset {
     .form-mensaje-error-activo {
       display: block;
     } 
-
+.dato-invalido{
+  color: red;
+}
+.dato-valido{
+  color:#000
+}
 table {
   margin-left: auto;
   margin-right: auto;
@@ -189,30 +198,6 @@ img {
   display: block;
   margin: 0 auto;
 }
-.juego-memoria{
-  display: grid;
-   place-items: center;
-}
-.tablero{
- display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 8 columnas iguales */
-  grid-template-rows: repeat(6, 1fr);    /* 8 filas iguales */
-  gap: 5px; /* Crea un espacio de 5 píxeles entre todas las celdas */
-  border: 2px solid #333; /* Opcional: Borde para el contenedor principal */
-  width: 500px;
-  height: 500px;
-}
-
-.pieza{
-  border: 1px solid #000; /* Borde para cada celda */
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-}
-
-
 
 @media screen and (max-width:800px) {
   .formulario {
@@ -297,3 +282,59 @@ ul li a:hover {
 /* Estilo para el contenido principal si quieres que el footer no se solape */
 /* Esto es opcional y depende de cómo quieras manejar el contenido */
 
+.juego-memoria{ /* para poder centrar los grid hijos */
+  display: flex;
+  align-items: center; /* Centra horizontalmente los elementos hijos (h1, game-container, p) */
+  justify-content: center; /* Centra verticalmente los elementos hijos */
+}
+.game-container {
+    display: grid;
+    /* 5 columnas para 20 cartas (4 filas * 5 columnas) */
+    grid-template-columns: repeat(5, 100px); 
+    grid-gap: 10px; /* separacion entre las cartas */
+    perspective: 1000px; /* Para efecto 3D flip */
+    
+}
+.card {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    margin: auto;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara trasera cuando está volteada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.card-front {
+    background-color: #3498db; /* Color del reverso de la carta */
+}
+
+.card-back {
+    background-color: #ecf0f1; /* Color de la cara visible */
+    transform: rotateY(180deg);
+}
+
+.card.match .card-front {
+    background-color: #2ecc71; /* Color cuando hay match */
+}
+
+.card.match {
+    cursor: default;
+}
