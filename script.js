@@ -37,8 +37,8 @@ const checkboxes = document.querySelectorAll('input[name="tipo_suscripcion"]');
 document.querySelectorAll('input').forEach(input => {
   input.addEventListener('blur', () => {
 if (!input.checkValidity()) {
-  input.reportValidity()
-  input.classList.add('dato-invalido'); // Muestra el mensaje de validación del navegador
+  input.reportValidity()// Muestra el mensaje de validación del navegador
+  input.classList.add('dato-invalido'); //cambia la clase, para que sea rojo
   input.classList.remove('dato-valido');
 } else {
   input.classList.remove('dato-invalido');
